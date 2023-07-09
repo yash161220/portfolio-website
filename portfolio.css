@@ -1,0 +1,592 @@
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+:root{
+    --bgOrange: #e84949;
+}
+.wrapper{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+
+}
+
+.navbar{
+    /* margin-top: 2em; */
+    display: flex;
+    align-items: center;    /* veticle samme laanen ke liye */
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-left: 4rem;    /* set kr lena*/
+    padding-right: 4rem;
+
+}
+
+.logoname{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+}
+
+.logo{
+    width: 80px;
+}
+ 
+.name{
+    margin-left: -1.9rem;      /* logo img ko cls laane ke liye */
+    font-size: 28px;
+}
+
+.navitems{
+    display: flex;
+    gap: 2rem;
+    padding: 0 4em;
+}
+
+.navitems div{
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    /* font-size: 24px; */
+}
+
+            /* BUTTTON  */
+
+
+.clr{
+    color: aliceblue;                   /*JUST FOR TEXT CLR*/
+}
+.b{
+    width: 15vw;
+    height: 10vh;
+    background-color: rgb(255, 0, 0);
+    border: none;
+    /* text-align: center; */
+    box-shadow: 5px 5px 10px rgb(88, 77, 77);
+    cursor: pointer;
+    position: relative;                   /*   TWO CLR NEED TO BE OVERLAP   */
+    z-index: 1; 
+    border-radius: 5px;                          /*   TEXT MUST SHOWN AFTER THE HOVER SO PUT THE BUTTON ON UP SIDE */
+    
+}
+.b::before{
+    content: "";                            /* BEFORE MEANS JB B KI PRPTY USE HO RHI HOGI TOH USSE PHELE YEH LEGA*/
+    background-color: black;              /*CONTETN LIKHNA MUST*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scaleX(0);                   /*BLACK JBI DIKHE TB HOVER KRE TOH ABI SCALE O THEN 1*/
+    transition: all 1s;
+    transform-origin: left;                 /*USE TO SET THE DIRTCN*/
+    z-index: -1;
+}
+.b:hover::before{
+    transform: scaleX(1);
+}
+
+
+            /* BUTTON END */
+
+
+.hero{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5rem;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    padding-bottom: 8rem;
+}
+
+.fade{
+    position: absolute;
+    user-select: none;
+    font-size: 7em;
+    color: rgb(231, 231, 231);
+
+    bottom: -8%;
+    left: -2%;
+    font-weight: bold;
+    transition: all 3s;
+}
+
+.heroleft{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem;
+}
+
+.head1{
+    font-size:45px;
+    color: #343d68;
+    font-weight: 500;
+}
+
+.jsc{
+    color: #4e45d5;
+    font-weight: 800;
+}
+
+.head2{
+    font-size: 2rem;
+    /* line-height: 45px; */
+}
+
+.para{
+    margin-top: 2rem;
+    width: 70%;
+    font-weight: 500;
+}
+
+.small{
+
+    width: auto;
+    /* padding: 200px; */
+}
+
+.i{
+    max-width: 8%;
+    max-height: 8%;
+}
+
+.k{
+    max-width: 70%;
+    max-height: 42%;
+    /* z-index: 7; */
+}
+
+.mi{
+    max-width: 100%;
+    max-height: 90%;
+    z-index: -7;
+}
+
+.heroright{
+    position: relative;
+    padding: 5rem;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.mine{
+    padding: 2.5rem;
+    filter: grayscale(1);
+    /* transition: all 1s; */
+    animation-name: scaleim;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes scaleim {
+
+    0%{
+        filter: grayscale(0);
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+        filter: grayscale(1);
+        box-shadow: 3px 3px 10px black;
+    }
+    100%{
+        transform: scale(1);
+        filter: grayscale(0);
+    }
+    
+}
+
+ .dot{
+    z-index: 7;
+    bottom: -1rem;
+    right: 0;
+    animation-name: dotani;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    /* animation-timing-function: linear; */
+
+}
+
+@keyframes dotani {
+
+    0%{
+        transform: translateY(1px);
+    }
+    50%{
+        transform: translateY(-35px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+    
+}
+
+.cube{
+    z-index: 19;
+    top: -0.8em;
+    left: 27em;
+    /* right: 1em; */
+    animation-name: cubeani;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cubeani {
+
+    0%{
+        transform: rotateX(0deg) translateY(0px);
+    }
+    50%{
+        transform: rotateX(180deg) translateY(-12px);
+    }
+    100%{
+        transform: rotateX(360deg) translateY(0px);
+    }
+}
+/*
+.circle{
+
+}
+
+@keyframes scaleim {
+
+    0%{
+        
+    }
+    50%{
+        
+    }
+    100%{
+       
+    }
+    
+}
+*/
+.zig{
+    z-index: 7;
+    top: 1.5em;
+    left:-0.3em;
+    animation-name: zigani;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes zigani {
+
+    50%{
+       left: 5%;
+       top: 2%; 
+    }
+} 
+
+.projects{
+    background-color: rgb(231, 231, 231);
+    margin-top: 4rem;
+}
+
+.prjcthead1{
+    color:var(--bgOrange);
+    font-size: 90px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.prjctcontainer{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.card{
+    /* padding-left: 6rem; */
+    width: 90%;
+    height: 500px;
+    background-image: url(p1.png);
+    background-size: cover; 
+    background-repeat: no-repeat;    /*  CHOTI IMG RPT NA KRE */
+    position: relative;
+    box-shadow: 0px 0px 40px #1f1f1f;
+}
+
+.card::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1f1f1f9a;
+    transform: scaleX(1);
+    z-index: 0;
+}
+
+.card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #343d68, #343d68be, #343d687c);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.4s;
+    z-index: 1;
+}
+
+.card:hover::before{
+    transform: scaleX(1);
+}
+
+.prjctno{
+    position: absolute;
+    font-size: 200px;
+    font-weight: 600;
+    color:white ;
+    z-index: 10;
+    display: none;
+    /* opacity: 0; */
+}
+
+.card:hover .prjctno{
+    display: block;
+    /* opacity: 1; */
+}
+
+.prjctnoright{
+    right: -40px;
+    top: -45px;
+}
+
+.prjctnoleft{
+    left: -40px;
+    top: -45px;
+}
+
+.prjctcontent{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    color: white;
+    padding: 2em;
+    bottom: 20%;
+    z-index: 6;
+    gap: 1em;
+    transition: all 0.4s;
+}
+
+.card:hover .prjctcontent{
+    transform: scale(1.1);
+}
+
+.prjctcontentleft{
+    left: 10%;
+}
+
+.prjctcontentright{
+    right: 10%;
+}
+
+.prjctskillimg{
+    width: 60%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.prjctskill{
+    width: 35px;
+}
+
+.prjcthead2{
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 3rem ;
+}
+
+.prjctpara{
+    width: 70%;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.prjctbuttnextra{
+    display: flex;
+    gap: 0.9rem;
+    align-items: center;
+}
+
+.icon{
+    cursor: pointer;
+    color: white;
+    font-size: 35px;
+}
+
+.icon:hover{
+    color: var(--bgOrange);
+    transition: all 0.4s;
+}
+
+#card01{
+    background-image: url(p1.png);
+}
+
+#card02{
+    margin-left: 140px;
+    background-image: url(clone.gif);
+}
+
+#card03{
+    background-image: url(p3.png);
+}
+
+@media (max-width:1100px){
+    .prjcthead1{
+        padding-top: 30px;
+        color: var(--bgOrange);
+        text-align: center;
+        font-size: 40px;
+    }
+    .prjctcontainer{
+        padding: 5px;
+        margin: 10px;
+        gap: 60px;
+    }
+    .card{
+        width: 100%;
+        height: 300px;
+    }
+    .card{
+        background-size: cover;
+        background-position: center;
+    }
+    .prjctcontent{
+        scale: 0.5;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .prjctcontentleft{
+        left: 0;
+    }
+    .prjcthead2{
+        font-size: 40px;
+        width: 100%;
+    }
+    .prjctpara{
+        width: 100%;
+    }
+    .card02{
+        margin-left: 0;
+    }
+    .prjctskillimg{
+        width: 100%;
+    }
+    .prjctskill{
+        width: 35px;
+    }
+    .card:hover .prjctno{
+        display: none;
+    }
+    .card:hover .prjctcontent{
+        scale: 0.55;
+    }
+
+}
+
+.contactcontainer{
+    width: 110%;
+    /* background-color: rgb(231, 231, 231); */
+}
+/* 
+.container{
+    width: 1100px;
+} */
+
+.contacme{
+    font-size: 5em;
+    color: var(--bgOrange);
+    padding-top: 2rem;
+}
+
+.more{
+    font-size: 2rem;
+    color: #343d68;
+    text-transform: capitalize;
+
+}
+
+.restcontainer{
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formfieldcontainer{
+    width: 100%;
+
+}
+
+.formfield{
+    width: 80%;
+    height: 42px;
+    padding: 0 2rem;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px #1f1f1f;
+    font-weight: 500;
+    border: none;
+    margin: 17px;
+}
+
+.formfieldarea{
+    height: auto;
+    padding-top: 1rem;
+}
+
+
+#xyz{
+    border: none;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+}
+
+#xyz:hover{
+    scale: 0.9;
+}
+
+.submiticon{
+   padding: 0 1rem;
+   font-size: 1rem;  
+}
